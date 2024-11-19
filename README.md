@@ -1,5 +1,4 @@
 [![Clojars Project](https://img.shields.io/clojars/v/net.clojars.macielti/prometheus-component.svg)](https://clojars.org/net.clojars.macielti/prometheus-component)
-
 # Prometheus Component
 
 This is a component that allows you to monitor your application using Prometheus.
