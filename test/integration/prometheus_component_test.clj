@@ -1,15 +1,14 @@
 (ns prometheus-component-test
-  (:require
-   [clojure.string :as str]
-   [clojure.test :refer :all]
-   [common-clj.integrant-components.routes :as component.routes]
-   [iapetos.core :as prometheus]
-   [integrant.core :as ig]
-   [io.pedestal.test :as test]
-   [matcher-combinators.test :refer [match?]]
-   [prometheus-component.core :as component.prometheus]
-   [schema.test :as s]
-   [service-component.core :as component.service]))
+  (:require [clojure.string :as str]
+            [clojure.test :refer [is testing]]
+            [common-clj.integrant-components.routes :as component.routes]
+            [iapetos.core :as prometheus]
+            [integrant.core :as ig]
+            [io.pedestal.test :as test]
+            [matcher-combinators.test :refer [match?]]
+            [prometheus-component.core :as component.prometheus]
+            [schema.test :as s]
+            [service-component.core :as component.service]))
 
 (def routes [["/metrics" :get [component.prometheus/expose-metrics-http-request-handler]
               :route-name :fetch-metrics]])
