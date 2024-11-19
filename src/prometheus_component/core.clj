@@ -1,9 +1,10 @@
 (ns prometheus-component.core
-  (:require [clojure.tools.logging :as log]
-            [iapetos.core :as prometheus]
-            [iapetos.export :as export]
-            [integrant.core :as ig]
-            [schema.core :as s]))
+  (:require
+   [clojure.tools.logging :as log]
+   [iapetos.core :as prometheus]
+   [iapetos.export :as export]
+   [integrant.core :as ig]
+   [schema.core :as s]))
 
 (s/defn expose-metrics-http-request-handler
   [{headers                     :headers

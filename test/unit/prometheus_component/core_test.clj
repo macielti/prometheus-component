@@ -1,12 +1,14 @@
 (ns prometheus-component.core-test
-  (:require [clojure.test :refer :all]
-            [iapetos.core :as prometheus]
-            [integrant.core :as ig]
-            [schema.test :as s]
-            [matcher-combinators.test :refer [match?]]
-            [prometheus-component.core :as component.prometheus])
-  (:import (iapetos.registry IapetosRegistry)
-           (io.prometheus.client Counter$Child)))
+  (:require
+   [clojure.test :refer :all]
+   [iapetos.core :as prometheus]
+   [integrant.core :as ig]
+   [matcher-combinators.test :refer [match?]]
+   [prometheus-component.core :as component.prometheus]
+   [schema.test :as s])
+  (:import
+   (iapetos.registry IapetosRegistry)
+   (io.prometheus.client Counter$Child)))
 
 (def config {::component.prometheus/prometheus {:metrics [(prometheus/counter :example/metric)]}})
 
