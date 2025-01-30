@@ -18,14 +18,14 @@
                    :test-paths     ^:replace ["test/unit" "test/integration" "test/helpers"]
 
                    :plugins        [[lein-cloverage "1.2.4"]
-                                    [com.github.clojure-lsp/lein-clojure-lsp "1.4.15"]
+                                    [com.github.clojure-lsp/lein-clojure-lsp "1.4.16"]
                                     [com.github.liquidz/antq "RELEASE"]]
 
-                   :dependencies   [[net.clojars.macielti/common-test-clj "1.1.1"]
+                   :dependencies   [[net.clojars.macielti/common-test-clj "5.2.3"]
                                     [net.clojars.macielti/service-component "2.4.2"]
-                                    [net.clojars.macielti/common-clj "40.72.72"]
+                                    [net.clojars.macielti/common-clj "43.74.74"]
                                     [org.slf4j/slf4j-api "2.0.16"]
-                                    [ch.qos.logback/logback-classic "1.5.12"]
+                                    [ch.qos.logback/logback-classic "1.5.16"]
                                     [nubank/matcher-combinators "3.9.1"]
                                     [io.pedestal/pedestal.jetty "0.7.2"]
                                     [io.pedestal/pedestal.service "0.7.2"]
