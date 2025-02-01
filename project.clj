@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/prometheus-component "0.1.1"
+(defproject net.clojars.macielti/prometheus-component "0.2.1"
 
   :description "Prometheus component for integrant"
 
