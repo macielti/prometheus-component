@@ -5,6 +5,12 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
+## 0.2.1 - 2025-02-01
+
+### Added
+
+- Added default metric about the response time of the out HTTP Requests (`:http-request-response-timing`).
+
 ## 0.1.1 - 2025-01-30
 
 ### Added
