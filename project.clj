@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/prometheus-component "0.2.1"
+(defproject net.clojars.macielti/prometheus-component "0.3.1"
 
   :description "Prometheus component for integrant"
 
@@ -21,7 +21,7 @@
                                     [com.github.clojure-lsp/lein-clojure-lsp "1.4.16"]
                                     [com.github.liquidz/antq "RELEASE"]]
 
-                   :dependencies   [[net.clojars.macielti/common-test-clj "5.2.3"]
+                   :dependencies   [[net.clojars.macielti/common-test-clj "5.2.4"]
                                     [net.clojars.macielti/service-component "2.4.2"]
                                     [net.clojars.macielti/common-clj "43.74.74"]
                                     [org.slf4j/slf4j-api "2.0.16"]

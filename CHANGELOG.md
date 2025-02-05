@@ -5,6 +5,13 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
+## 0.3.1 - 2025-02-05
+
+### Added
+
+- Added macro `with-elapsed-time` to measure the elapsed time of a given body of code and report it to the Prometheus.
+- Added default metric about the elapsed time of a given body of code (`:elapsed-time`).
+
 ## 0.2.1 - 2025-02-01
 
 ### Added

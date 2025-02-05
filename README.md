@@ -12,7 +12,8 @@ The following default metrics are defined:
 - **http-request-response**
     - **Type**: Counter
     - **Labels**: `:status`, `:service`, `:endpoint`
-    - **Description**: Counts the number of HTTP requests and their responses ([HTTP Client Component](https://github.com/macielti/http-client-component)).
+    - **Description**: Counts the number of HTTP requests and their
+      responses ([HTTP Client Component](https://github.com/macielti/http-client-component)).
 
 - **http-request-response-timing**
     - **Type**: Summary
@@ -21,7 +22,8 @@ The following default metrics are defined:
         - 0.5: 0.05
         - 0.9: 0.1
         - 0.99: 0.001
-    - **Description**: Measures the response time of HTTP requests ([HTTP Client Component](https://github.com/macielti/http-client-component)).
+    - **Description**: Measures the response time of HTTP
+      requests ([HTTP Client Component](https://github.com/macielti/http-client-component)).
 
 - **http-request-in-handle-timing-v2**
     - **Type**: Summary
@@ -30,7 +32,8 @@ The following default metrics are defined:
         - 0.5: 0.05
         - 0.9: 0.1
         - 0.99: 0.001
-    - **Description**: Measures the time taken to handle HTTP requests ([Service Component](https://github.com/macielti/service-component)).
+    - **Description**: Measures the time taken to handle HTTP
+      requests ([Service Component](https://github.com/macielti/service-component)).
 
 - **job-execution-timing**
     - **Type**: Summary
@@ -39,7 +42,17 @@ The following default metrics are defined:
         - 0.5: 0.05
         - 0.9: 0.1
         - 0.99: 0.001
-    - **Description**: Measures the time taken to execute a job from the [Scheduler Component](https://github.com/macielti/scheduler-component).
+    - **Description**: Measures the time taken to execute a
+      job ([Scheduler Component](https://github.com/macielti/scheduler-component)).
+
+- **elapsed-time**
+    - **Type**: Summary
+    - **Labels**: `:id`
+    - **Quantiles**:
+        - 0.5: 0.05
+        - 0.9: 0.1
+        - 0.99: 0.001
+    - **Description**: Measures the elapsed time to run a given body of code.
 
 ## License
 
