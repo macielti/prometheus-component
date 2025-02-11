@@ -1,4 +1,4 @@
-(defproject net.clojars.macielti/prometheus-component "0.3.1"
+(defproject net.clojars.macielti/prometheus-component "0.3.1-1"
 
   :description "Prometheus component for integrant"
 
@@ -18,7 +18,7 @@
                    :test-paths     ^:replace ["test/unit" "test/integration" "test/helpers"]
 
                    :plugins        [[lein-cloverage "1.2.4"]
-                                    [com.github.clojure-lsp/lein-clojure-lsp "1.4.16"]
+                                    [com.github.clojure-lsp/lein-clojure-lsp "1.4.17"]
                                     [com.github.liquidz/antq "RELEASE"]]
 
                    :dependencies   [[net.clojars.macielti/common-test-clj "5.2.4"]

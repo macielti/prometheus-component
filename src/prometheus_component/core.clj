@@ -32,7 +32,8 @@
    (prometheus/summary :job-execution-timing {:labels    [:service :job-id]
                                               :quantiles {0.5 0.05, 0.9 0.1, 0.99 0.001}})
    (prometheus/summary :elapsed-time {:labels    [:id]
-                                      :quantiles {0.5 0.05, 0.9 0.1, 0.99 0.001}})])
+                                      :quantiles {0.5 0.05, 0.9 0.1, 0.99 0.001}})
+   (prometheus/gauge :percentage-used-memory-host {:labels [:service :host]})])
 
 (defmethod ig/init-key ::prometheus
   [_ {:keys [metrics]}]

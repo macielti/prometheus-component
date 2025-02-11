@@ -5,6 +5,12 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
+## 0.3.1-1 - 2025-02-05 (beta)
+
+### Added
+
+- Added `:percentage-used-memory-host` metric to measure the percentage of used memory of the host.
+
 ## 0.3.1 - 2025-02-05
 
 ### Added
