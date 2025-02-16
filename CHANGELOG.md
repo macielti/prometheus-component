@@ -5,7 +5,11 @@ of [keepachangelog.com](http://keepachangelog.com/).
 
 ## Unreleased
 
-## 1.3.1-1 - 2025-02-05 (beta)
+## 1.3.1-1 - 2025-02-16 (beta)
+
+### Changed
+
+- Refactor the `with-elapsed-time` macro to be `report-elapsed-time!` use the proper `System/nanoTime`.
 
 ## 0.3.1-1 - 2025-02-05 (beta)
 
