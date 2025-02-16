@@ -5,13 +5,13 @@
             [integrant.core :as ig]
             [schema.core :as s]))
 
-(defmacro with-elapsed-time
-  "Measures the elapsed time to run the given body of code."
+(defmacro report-elapsed-time!
+  "Measures the elapsed time (msecs) to run the given body of code, reports it as a prometheus metric, and returns the result of the body."
   [registry id & body]
-  `(let [start# (System/currentTimeMillis)
+  `(let [start# (. System (nanoTime))
          result# (do ~@body)
-         end# (System/currentTimeMillis)]
-     (prometheus/observe ~registry :elapsed-time {:id ~id} (- end# start#))
+         end# (. System (nanoTime))]
+     (prometheus/observe ~registry :elapsed-time {:id ~id} (/ (double (- end# start#)) 1000000.0))
      result#))
 
 (s/defn expose-metrics-http-request-handler
