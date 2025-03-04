@@ -5,6 +5,33 @@
             [integrant.core :as ig]
             [schema.core :as s]))
 
+(def metrics-types #{:counter :gauge :histogram :summary})
+
+(s/defschema MetricType (apply s/enum metrics-types))
+
+(s/defschema ConfigMetric
+  {:type MetricType
+   :name s/Keyword
+   :opts (s/pred map?)})
+
+(defmulti config->metric :type)
+
+(s/defmethod config->metric :counter
+  [{:keys [name opts]} :- ConfigMetric]
+  (prometheus/counter name opts))
+
+(s/defmethod config->metric :gauge
+  [{:keys [name opts]} :- ConfigMetric]
+  (prometheus/gauge name opts))
+
+(s/defmethod config->metric :histogram
+  [{:keys [name opts]} :- ConfigMetric]
+  (prometheus/histogram name opts))
+
+(s/defmethod config->metric :summary
+  [{:keys [name opts]} :- ConfigMetric]
+  (prometheus/summary name opts))
+
 (defmacro report-elapsed-time!
   "Measures the elapsed time (msecs) to run the given body of code, reports it as a prometheus metric, and returns the result of the body."
   [registry id & body]
@@ -36,10 +63,12 @@
    (prometheus/gauge :percentage-used-memory-host {:labels [:service :host]})])
 
 (defmethod ig/init-key ::prometheus
-  [_ {:keys [metrics]}]
+  [_ {:keys [metrics components]}]
   (log/info :starting ::prometheus)
-  {:registry (-> (partial prometheus/register (prometheus/collector-registry))
-                 (apply (concat metrics default-metrics)))})
+  (let [config-defined-metrics (some->> components :config :metrics
+                                        (map config->metric))]
+    {:registry (-> (partial prometheus/register (prometheus/collector-registry))
+                   (apply (concat metrics default-metrics config-defined-metrics)))}))
 
 (defmethod ig/halt-key! ::prometheus
   [_ _]

@@ -3,7 +3,12 @@
 All notable changes to this project will be documented in this file. This change log follows the conventions
 of [keepachangelog.com](http://keepachangelog.com/).
 
-## Unreleased
+## 1.4.1-1 - 2025-03-04 (beta)
+
+### Added
+
+- Now you can define metrics from the configuration
+  file ([Config Component](https://github.com/macielti/common-clj/blob/main/src/common_clj/integrant_components/config.clj)).
 
 ## 1.3.1-1 - 2025-02-16 (beta)
 
